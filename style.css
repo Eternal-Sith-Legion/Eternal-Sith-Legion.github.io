@@ -74,3 +74,59 @@ box-shadow:0
 /* FOOTER */
 
 footer { text-align:center; padding:50px 20px; font-size:0.9rem; color:#aaa; }
+    /* Mobile fixes */
+@media (max-width: 768px) {
+
+    /* Fix header image scaling */
+    .header-img {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Text fix */
+    .main-text {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 10px;
+    }
+
+    /* Fix hamburger menu */
+    #navMenu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background: black;
+        padding-top: 80px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-left: 20px;
+    }
+
+    #navMenu.active {
+        right: 0;
+    }
+
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    /* Make content readable */
+    #mainContent {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        text-align: center;
+    }
+}
