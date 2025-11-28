@@ -1,99 +1,96 @@
-// HAMBURGER MENI
+// =========================
+// HAMBURGER MENU
+// =========================
 
-const hamburger =
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
 
-document.getElementById('hamburger');
-
-const navMenu
-
-document.getElementById('navMenu');
-
-hamburger.addEventListener('click',
-
-navMenu.classList.toggle('active'); });
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
 
 navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+    });
+});
 
-link.addEventListener('click', () =>
+// =========================
+// SCROLL FADE-IN
+// =========================
 
-navMenu.classList.remove('active')); });
+const sections = document.querySelectorAll('header, section');
 
-// SCROLL FADE IN
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight / 5 * 4;
 
-const sections =
+    sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
 
-document.querySelectorAll('header, section'); window.addEventListener('scroll', () => { const trigger = window.innerHeight/5*4;
+        if (boxTop < trigger) {
+            sec.classList.add('visible');
+        }
+    });
+});
 
-sections.forEach(sec => {
+// =========================
+// FIRE EFFECT (INTRO)
+// =========================
 
-if(sec.getBoundingClientRect().top
-
-sec.classList.add('visible'); } });
-
-< trigger){
-
-// FIRE EFFECT za intro
-const canvas
-
-document.getElementById('fireCanvas');
-
+const canvas = document.getElementById('fireCanvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
-
 canvas.height = window.innerHeight;
 
 let particles = [];
 
-for(let i=0;i<300;i++){
-
-particles.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height,
-
-size:Math.random()*4+1,
-
-speedY:Math.random()*1+0.5, alpha:Math.random()});
-
+for (let i = 0; i < 300; i++) {
+    particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 4 + 1,
+        speedY: Math.random() * 1 + 0.5,
+        alpha: Math.random()
+    });
 }
 
-function animateParticles(){
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{
+    particles.forEach(p => {
+        ctx.fillStyle = `rgba(255, ${Math.random() * 50}, 0, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
 
-ctx.fillStyle=`rgba(255,${Math.random()*50},0,${p
+        p.y -= p.speedY;
+        if (p.y < 0) p.y = canvas.height;
+    });
 
-.alpha})`;
-
-ctx.beginPath();
-
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-
-ctx.fill();
-
-p.y-=p.speedY;
-
-if(p.y<0) p.y=canvas.height;
-
-});
-
-requestAnimationFrame(animateParticles);
+    requestAnimationFrame(animateParticles);
+}
 
 animateParticles();
 
-// SHOW MAIN CONTENT nakon intro animacije
-  function showMain(){
+// =========================
+// SHOW MAIN CONTENT AFTER INTRO
+// =========================
 
-document.getElementById('intro').style.display='n one';
+function showMain() {
+    document.getElementById('intro').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    document.querySelector('#headerSection').classList.add('visible');
+}
 
-document.getElementById('mainContent').style.disp lay='block';
-
-document.querySelector('#headerSection').classLis t.add('visible');
-
+// Show main content after 4 seconds
 setTimeout(showMain, 4000);
 
-// RESIZE CANVAS
+// =========================
+// CANVAS RESIZE
+// =========================
 
-window.addEventListener('resize',()=>{
-
-canvas.width=window.innerWidth;
-
-canvas.height=window.innerHeight; });
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
