@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Eternal Sith Legion</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro">
-    <h1 id="darkSide">DARK SIDE</h1>
+<!-- INTRO SECTION -->
+<section id="intro">
+    <h1 class="glow-title">DARK SIDE</h1>
     <canvas id="fireCanvas"></canvas>
-</div>
+</section>
 
 <!-- MAIN CONTENT -->
-<div id="mainContent" style="display:none;">
+<section id="mainContent" style="display:none;">
 
-    <header id="headerSection">
-        <h1 id="mainTitle">ETERNAL SITH LEGION</h1>
+    <h1 class="main-title glow-title">ETERNAL SITH LEGION</h1>
 
-        <img src="https://i.imgur.com/fSfMdLj.png" alt="Eternal Sith Legion" class="header-img">
+    <img src="https://i.imgur.com/fSfMdLj.png" class="main-image" alt="Sith Legion Logo">
 
-        <p class="main-text">
-            Welcome to the Eternal Sith Legion, a powerful clan in Saber Showdown...
+    <p class="text-block">
+        Welcome to the Eternal Sith Legion, an elite Saber Showdown clan where warriors rise, train, and dominate the battlefield.
+    </p>
+
+    <p class="text-block">
+        Whether you're new or experienced, our clan offers structured training, powerful strategies, and a community of dedicated fighters.
+    </p>
+
+    <a href="https://discord.gg/pRs8aeSa" target="_blank" class="btn-join">JOIN</a>
+
+    <!-- ABOUT US -->
+    <section class="section-box">
+        <h2 class="section-title glow-subtitle">ABOUT US</h2>
+        <p class="text-block">
+            Eternal Sith Legion is built on discipline, teamwork and combat mastery. Our leaders guide new members while respecting experienced fighters.
         </p>
-
-        <a href="https://discord.gg/pRs8aeSa" target="_blank" class="join-btn">
-            JOIN <i class="fab fa-discord"></i>
-        </a>
-    </header>
-
-    <!-- About Us -->
-    <section id="about" class="section-box">
-        <h2>About Us</h2>
-        <p>
-            Eternal Sith Legion is a clan focused on skill, teamwork and strategy...
-        </p>
-    </section>
-
-    <!-- Contact Us -->
-    <section id="contact" class="section-box">
-        <h2>Contact Us</h2>
-        <p>
-            For more info, join our Discord and create a ticket for assistance.
+        <p class="text-block">
+            The clan prioritizes skill growth, strategy, and maintaining a strong community environment.
         </p>
     </section>
-</div>
+
+    <!-- CONTACT US -->
+    <section class="section-box">
+        <h2 class="section-title glow-subtitle">CONTACT US</h2>
+        <p class="text-block">
+            Want to join or need more info?  
+            Join our Discord server below and open a ticket in "Contact the Council".
+        </p>
+        <a href="https://discord.gg/pRs8aeSa" target="_blank" class="btn-join smaller-btn">JOIN DISCORD</a>
+    </section>
+
+</section>
 
 <footer>
-    &copy; 2025 Eternal Sith Legion. All rights reserved.
+    &copy; 2025 Eternal Sith Legion — All Rights Reserved
 </footer>
 
 <script src="script.js"></script>
