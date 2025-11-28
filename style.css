@@ -130,3 +130,89 @@ footer { text-align:center; padding:50px 20px; font-size:0.9rem; color:#aaa; }
         text-align: center;
     }
 }
+    /* Global */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Header image */
+.header-img {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+}
+
+/* Text styling */
+.main-text,
+.section-box p {
+    font-size: 17px;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+/* Join button */
+.join-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: red;
+    border-radius: 10px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.join-btn:hover {
+    background: rgb(200, 0, 0);
+}
+
+/* Section boxes */
+.section-box {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 25px 15px;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: gray;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+    #mainTitle {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .section-box {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .main-text {
+        padding: 0 15px;
+    }
+
+    .join-btn {
+        width: 80%;
+        max-width: 250px;
+    }
+}
